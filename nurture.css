@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+:root {
+    --background: #FDF8FD;
+    --background-darker: #00000009;
+    --header: url('assets/joshua-collis-nurture-sky.jpg') bottom;
+    --accent: #6750a4;
+    --accent-secondary: #e9ddff;
+    --mark: #FDD835;
+    --quote: #90A4AE;
+    --tip: #C8E6C9;
+    --alert: #FFCDD2;
+    --border: #000000;
+    --round-xs: .3rem;
+    --round-s: .7rem;
+    --round-m: 1.2rem;
+    --round-l: 2rem;
+    --shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
+    --hover-shadow: 0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);
+    --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, .2), 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12);
+    --fab-hover-shadow: 0px 5px 5px -3px rgba(0, 0, 0, .2), 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12);
+    --hover: #ffffff6d;
+    --hover-darker: #00000012;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+body>:not(header) {
+    width: 70%;
+    margin: auto;
+}
+
+body>header {
+    padding: 8rem;
+    text-align: center;
+    background: var(--header);
+    font-size: 1.5rem;
+    margin: .7rem .7rem 3rem .7rem;
+    border-radius: var(--round-l);
+}
+
+header>nav {
+    font-size: 1rem;
+    line-height: 2;
+    padding: 2rem 0 1rem 0;
+}
+
+/* Use flexbox to allow items to wrap, as needed */
+header>nav ul,
+header>nav ol {
+    align-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* List items are inline elements, make them behave more like blocks */
+header>nav ul li,
+header>nav ol li {
+    display: inline-block;
+    margin: .3rem;
+}
+
+article,
+fieldset {
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: var(--round-s);
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin: 2.5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.44rem;
+}
+
+h5 {
+    font-size: 1.15rem;
+}
+
+h6 {
+    font-size: 0.96rem;
+}
+
+p {
+    margin: 1.2rem 0;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0 1.2rem;
+    border-left: .3rem solid var(--quote);
+    font-style: italic;
+    color: #757575;
+}
+
+blockquote[role=tip] {
+    all: unset;
+    display: block;
+    padding: .8rem 1rem;
+    background-color: var(--tip);
+    border-radius: var(--round-xs);
+    box-shadow: var(--shadow);
+}
+
+blockquote[role=alert] {
+    all: unset;
+    display: block;
+    padding: .8rem 1rem;
+    background-color: var(--alert);
+    border-radius: var(--round-xs);
+    box-shadow: var(--shadow);
+}
+
+aside {
+    width: 30%;
+    padding: 0 1rem;
+    margin-left: 15px;
+    background-color: var(--background-darker);
+    float: right;
+    font-style: italic;
+    box-shadow: var(--shadow);
+    border-radius: var(--round-s);
+}
+
+details {
+    padding: .2rem 1.6rem;
+    background-color: var(--background-darker);
+    border-radius: var(--round-l);
+    box-shadow: var(--shadow);
+}
+
+details[open] summary {
+    margin-bottom: -1.2rem;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.8rem 0;
+    word-break: break-all;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+thead {
+    border-bottom: 1px solid #7a757f;
+}
+
+tfoot {
+    border-top: 1px solid #7a757f;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--background-darker);
+}
+
+kbd,
+pre,
+code {
+    font-family: "Roboto Mono", monospace;
+}
+
+kbd {
+    padding: 2px 5px;
+    border-radius: var(--round-xs);
+    border: 1px solid var(--border);
+    border-bottom: 3px solid var(--border);
+}
+
+code {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+mark {
+    padding: 2px 5px;
+    border-radius: var(--round-xs);
+    background-color: var(--mark);
+}
+
+pre {
+    padding: 1rem 1.4rem;
+    border-radius: var(--round-m);
+    background-color: var(--background-darker);
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--round-xs);
+}
+
+progress {
+    width: 100%;
+    height: .5rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Webkit (Chrome, Safari, Opera) */
+progress::-webkit-progress-bar {
+    background-color: var(--accent-secondary);
+    border-radius: 25px;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--accent);
+    border-radius: 25px 0 0 25px;
+}
+
+dialog {
+    border: none;
+    padding: .1rem 2.5rem 2rem 2rem;
+    border-radius: var(--round-l);
+}
+
+dialog::backdrop {
+    background: #00000052;
+}
+
+form[method="dialog"] {
+    float: right;
+}
+
+label {
+    display: block;
+}
+
+textarea,
+select,
+input {
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid var(--border);
+    border-radius: var(--round-xs);
+    background: none;
+}
+
+input:not([type="submit"], [type="reset"], [type="button"], [type="color"], [type="range"], [type="radio"], [type="checkbox"]),
+select,
+textarea {
+    padding: .8rem .9rem;
+    border: 1px solid var(--border);
+    border-radius: var(--round-xs);
+}
+
+input:not([type="submit"], [type="reset"], [type="button"], [type="range"], [type="radio"], [type="checkbox"]):focus,
+select:focus,
+textarea:focus {
+    outline: 1px solid var(--accent);
+}
+
+form legend {
+    padding: .8rem;
+    font-size: 2rem;
+}
+
+form label {
+    color: #7b7b7b;
+}
+
+form[type=stack] p>* {
+    display: block;
+    margin: .6rem 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--accent);
+    scale: 1.5;
+    margin-right: .8rem;
+}
+
+input[type="range"] {
+    accent-color: var(--accent);
+    width: 100%;
+}
+
+input[type="checkbox"]+label,
+input[type="radio"]+label {
+    display: inline-block;
+}
+
+button,
+.button,
+a.button,
+header>nav a,
+header>nav a:visited,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+label[type="button"] {
+    all: unset;
+    background-image: none;
+    padding: .8rem 1.6rem;
+    background-color: var(--accent);
+    color: #ffffff;
+    font-size: .875rem;
+    font-weight: 500;
+    border-radius: var(--round-l);
+    line-height: normal;
+    cursor: pointer;
+    transition: 0.09s;
+    user-select: none;
+}
+
+button:hover,
+.button:hover,
+a.button:hover,
+header>nav a:hover,
+header>nav a:visited:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+label[type="button"]:hover {
+    background-image: linear-gradient(0deg, var(--hover) 0%, var(--hover) 100%);
+    box-shadow: var(--hover-shadow);
+}
+
+button:active,
+.button:active,
+a.button:active,
+/* extra specificity to override a */
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+label[type="button"]:active {
+    background-image: none !important;
+}
+
+input:disabled,
+button:disabled,
+a[aria-disabled="true"] {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+button.ghost,
+button.outline {
+    background: none;
+    color: var(--accent);
+    box-shadow: none !important;
+}
+
+button.ghost:hover,
+button.outline:hover {
+    background-image:linear-gradient(0deg, var(--hover-darker) 0%, var(--hover-darker) 100%);
+}
+
+button.outline {
+    border: 1px solid #7a757f;
+}
+
+button.fab {
+    border-radius: var(--round-m);
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    box-shadow: var(--fab-shadow);
+}
+
+button.fab:hover {
+    box-shadow: var(--fab-hover-shadow);
+}
+
+button.fab i {
+    scale: 3;
+    margin: .2rem 0 0 1.6rem;
+}
+
+button i {
+    font-size: 12px !important;
+    scale: 2;
+    margin-right: .5rem;
+    display: inline;
+}
+
+.round-xs {
+    border-radius: var(--round-xs);
+}
+
+.round-s {
+    border-radius: var(--round-s);
+}
+
+.round-m {
+    border-radius: var(--round-m);
+}
+
+.round-l {
+    border-radius: var(--round-l);
+}
+
+[role="group"] button:first-child {
+    border-radius: var(--round-l) 0 0 var(--round-l);
+}
+
+[role="group"] button:last-child {
+    border-radius: 0 var(--round-l) var(--round-l) 0;
+    border-right: 1px solid #7a757f;
+}
+
+[role="group"] button {
+    float: left;
+    border-radius: 0px;
+    border-right: none;
+}
+
+[role="group"]:after {
+    content: "";
+    clear: both;
+    display: table;
+}
